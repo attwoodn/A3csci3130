@@ -15,7 +15,7 @@ public class CreateContactActivity extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_create_contact_acitivity);
+        setContentView(R.layout.activity_create_contact_activity);
         //Get the app wide shared variables
         appState = ((MyApplicationData) getApplicationContext());
 
