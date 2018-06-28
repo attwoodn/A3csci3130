@@ -23,6 +23,14 @@
           }
         },
         {
+          "client_id": "524505653410-u5tgees3uld9qvm29i8b276s7r4crd4k.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.acme.a3csci3130",
+            "certificate_hash": "9b54ce2e6017abd5b25712d6376737bda8dfa4f1"
+          }
+        },
+        {
           "client_id": "524505653410-1apcb889kog530lja47meahii6s1u9rh.apps.googleusercontent.com",
           "client_type": 3
         }
