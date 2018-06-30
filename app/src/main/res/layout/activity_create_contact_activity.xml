@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.acme.a3csci3130.DetailViewActivity">
+    tools:context="com.acme.a3csci3130.CreateContactActivity">
 
     <EditText
         android:id="@+id/businessNameTextField"
@@ -62,36 +62,29 @@
     <EditText
         android:id="@+id/addressTextField"
         android:layout_width="0dp"
-        android:layout_height="46dp"
+        android:layout_height="wrap_content"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
-        android:hint="Address"
+        android:hint="@string/hint_address"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/provinceSpinner" />
 
     <Button
-        android:id="@+id/updateButton"
+        android:id="@+id/createContactButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="32dp"
-        android:layout_marginTop="24dp"
-        android:onClick="updateContact"
-        android:text="Update Data"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginTop="8dp"
+        android:onClick="submitInfoButton"
+        android:text="Create Contact"
+        app:layout_constraintHorizontal_bias="0.502"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/addressTextField" />
 
-    <Button
-        android:id="@+id/deleteButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginRight="32dp"
-        android:layout_marginTop="24dp"
-        android:onClick="eraseContact"
-        android:text="Erase Contact"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/addressTextField" />
-
 
 </android.support.constraint.ConstraintLayout>
