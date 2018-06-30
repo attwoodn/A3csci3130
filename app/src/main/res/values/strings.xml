@@ -54,4 +54,6 @@
         <item>@string/business_processor</item>
         <item>@string/business_fish_monger</item>
     </string-array>
+
+    <string name="database_contact_submission_error">"Contact did not match expected criteria"</string>
 </resources>

@@ -6,19 +6,30 @@
     android:layout_height="match_parent"
     tools:context="com.acme.a3csci3130.DetailViewActivity">
 
-    <Spinner
-        android:id="@+id/provinceSpinner"
+    <EditText
+        android:id="@+id/businessNameTextField"
         android:layout_width="0dp"
-        android:layout_height="44dp"
+        android:layout_height="wrap_content"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
-        android:dropDownWidth="match_parent"
-        android:entries="@array/provinces"
+        android:hint="@string/hint_name"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/businessTypeSpinner" />
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/businessNumberTextField"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:hint="@string/hint_business_number"
+        android:inputType="number"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/businessNameTextField" />
 
     <Spinner
         android:id="@+id/businessTypeSpinner"
@@ -34,29 +45,19 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/businessNumberTextField" />
 
-    <EditText
-        android:id="@+id/businessNumberTextField"
+    <Spinner
+        android:id="@+id/provinceSpinner"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_height="44dp"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
-        android:hint="@string/hint_business_number"
+        android:dropDownWidth="match_parent"
+        android:entries="@array/provinces"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/businessNameTextField" />
-
-    <EditText
-        android:id="@+id/businessNameTextField"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:hint="@string/hint_name"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/businessTypeSpinner" />
 
     <EditText
         android:id="@+id/addressTextField"

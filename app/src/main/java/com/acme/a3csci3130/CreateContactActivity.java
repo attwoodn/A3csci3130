@@ -49,8 +49,6 @@ public class CreateContactActivity extends Activity {
         //each entry needs a unique ID
         String databaseId = appState.firebaseReference.push().getKey();
 
-        System.out.println("business type: " + businessTypeSpinner.getSelectedItem().toString() + "     province: " + provinceSpinner.getSelectedItem().toString());
-
         String businessName = businessNameTextField.getText().toString();
         String businessNumber = businessNumberTextField.getText().toString();
         String address = addressTextField.getText().toString();
@@ -85,7 +83,7 @@ public class CreateContactActivity extends Activity {
     }
 
     private void showError(){
-        Toast errorToast = Toast.makeText(this, "Contact did not match expected criteria", Toast.LENGTH_LONG);
+        Toast errorToast = Toast.makeText(this, getString(R.string.database_contact_submission_error), Toast.LENGTH_LONG);
         errorToast.show();
     }
 }
