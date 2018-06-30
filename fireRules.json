@@ -4,14 +4,17 @@
     ".write": "true",
     "contacts": {
       "$contact": {
-          "name": {
-              ".validate": "newData.isString() && newData.val().length >= 2 && newData.val().length <= 48"
+        "name": {
+          ".validate": "newData.isString() && newData.val().length >= 2 && newData.val().length <= 48"
           },
           "businessId": {
-              ".validate": "newData.isNumber() && newData.val() > 99999999"
+            ".validate": "newData.isString() && newData.val().length >= 9"
           },
           "address": {
-              ".validate": "newData.val().length < 50"
+            ".validate": "newData.val().length < 50"
+          },
+          "businessType": {
+            ".validate": "newData.val().length > 0"
           }
       }
     }

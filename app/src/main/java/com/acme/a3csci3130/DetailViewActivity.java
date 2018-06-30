@@ -3,25 +3,34 @@ package com.acme.a3csci3130;
 import android.app.Activity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.EditText;
+import android.widget.Spinner;
 
 public class DetailViewActivity extends Activity {
 
-    private EditText nameField, emailField;
-    Contact receivedPersonInfo;
+    private EditText businessNameTextField, addressTextField, businessNumberTextField;
+    private Spinner businessTypeSpinner, provinceSpinner;
+    Contact receivedBusinessInfo;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detail_view);
-        receivedPersonInfo = (Contact)getIntent().getSerializableExtra("Contact");
+        receivedBusinessInfo = (Contact) getIntent().getSerializableExtra("Contact");
 
-        nameField = (EditText) findViewById(R.id.name);
-        emailField = (EditText) findViewById(R.id.email);
+        businessNameTextField = (EditText) findViewById(R.id.businessNameTextField);
+        businessNumberTextField = (EditText) findViewById(R.id.businessNumberTextField);
+        businessTypeSpinner = (Spinner) findViewById(R.id.businessTypeSpinner);
+        provinceSpinner = (Spinner) findViewById(R.id.provinceSpinner);
+        addressTextField = (EditText) findViewById(R.id.addressTextField);
 
-        if(receivedPersonInfo != null){
-            nameField.setText(receivedPersonInfo.name);
-            emailField.setText(receivedPersonInfo.address);
+        if(receivedBusinessInfo != null){
+            businessNameTextField.setText(receivedBusinessInfo.name);
+            businessNumberTextField.setText(receivedBusinessInfo.businessId);
+            businessTypeSpinner.setSelection(((ArrayAdapter)businessTypeSpinner.getAdapter()).getPosition(receivedBusinessInfo.businessType));
+            provinceSpinner.setSelection(((ArrayAdapter)provinceSpinner.getAdapter()).getPosition(receivedBusinessInfo.province));
+            addressTextField.setText(receivedBusinessInfo.address);
         }
     }
 

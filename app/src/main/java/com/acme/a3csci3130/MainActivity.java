@@ -23,7 +23,7 @@ public class MainActivity extends Activity {
         setContentView(R.layout.activity_main);
 
         //Get the app wide shared variables
-        MyApplicationData appData = (MyApplicationData)getApplication();
+        MyApplicationData appData = (MyApplicationData) getApplication();
 
         //Set-up Firebase
         appData.firebaseDBInstance = FirebaseDatabase.getInstance();
@@ -43,28 +43,24 @@ public class MainActivity extends Activity {
         };
         contactListView.setAdapter(firebaseAdapter);
         contactListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            // onItemClick method is called everytime a user clicks an item on the list
+            // onItemClick method is called every time a user clicks an item on the list
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Contact person = (Contact) firebaseAdapter.getItem(position);
-                showDetailView(person);
+            Contact businessContact = firebaseAdapter.getItem(position);
+            showDetailView(businessContact);
             }
         });
     }
 
-    public void createContactButton(View v)
-    {
-        Intent intent=new Intent(this, CreateContactActivity.class);
+    public void createContactButton(View v) {
+        Intent intent = new Intent(this, CreateContactActivity.class);
         startActivity(intent);
     }
 
-    private void showDetailView(Contact person)
-    {
+    private void showDetailView(Contact businessContact) {
         Intent intent = new Intent(this, DetailViewActivity.class);
-        intent.putExtra("Contact", person);
+        intent.putExtra("Contact", businessContact);
         startActivity(intent);
     }
-
-
 
 }

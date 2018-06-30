@@ -13,22 +13,24 @@ import java.util.Map;
 
 public class Contact implements Serializable {
 
-    public int businessId;
+    public String databaseId;
+    public String businessId;
     public String name;
-    public BusinessType businessType;
+    public String businessType;
     public String address;
-    public Province province;
+    public String province;
 
 
     public Contact() {
         // Default constructor required for calls to DataSnapshot.getValue
     }
 
-    public Contact(int businessId, String name, BusinessType businessType){
-        this(businessId, name, businessType, "", Province.NULL);
+    public Contact(String databaseId, String businessId, String name, String businessType){
+        this(databaseId, businessId, name, businessType, "", "");
     }
 
-    public Contact(int businessId, String name, BusinessType businessType, String address, Province province){
+    public Contact(String databaseId, String businessId, String name, String businessType, String address, String province){
+        this.databaseId = databaseId;
         this.businessId = businessId;
         this.name = name;
         this.address = address;
@@ -42,8 +44,8 @@ public class Contact implements Serializable {
         result.put("businessId", businessId);
         result.put("name", name);
         result.put("address", address);
-        result.put("province", province.getAbbreviation());
-        result.put("businessType", businessType.name());
+        result.put("province", province);
+        result.put("businessType", businessType);
 
         return result;
     }

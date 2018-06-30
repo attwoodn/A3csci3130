@@ -4,4 +4,54 @@
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    
+    <string name="hint_name">Business name</string>
+    <string name="hint_address">Address</string>
+    <string name="hint_business_number">Business number</string>
+
+    <string name="spinner_default_province">Province</string>
+    <string name="province_alberta">Alberta</string>
+    <string name="province_british_columbia">British Columbia</string>
+    <string name="province_manitoba">Manitoba</string>
+    <string name="province_new_brunswick">New Brunswick</string>
+    <string name="province_newfoundland_and_labrador">Newfoundland and Labrador</string>
+    <string name="province_nova_scotia">Nova Scotia</string>
+    <string name="province_north_west_territories">North West Territories</string>
+    <string name="province_nunavut">Nunavut</string>
+    <string name="province_ontario">Ontario</string>
+    <string name="province_prince_edward_island">Prince Edward Island</string>
+    <string name="province_quebec">Quebec</string>
+    <string name="province_saskatchewan">Saskatchewan</string>
+    <string name="province_yukon">Yukon</string>
+
+    <string-array name="provinces">
+        <item>@string/spinner_default_province</item>
+        <item>@string/province_alberta</item>
+        <item>@string/province_british_columbia</item>
+        <item>@string/province_manitoba</item>
+        <item>@string/province_new_brunswick</item>
+        <item>@string/province_newfoundland_and_labrador</item>
+        <item>@string/province_north_west_territories</item>
+        <item>@string/province_nova_scotia</item>
+        <item>@string/province_nunavut</item>
+        <item>@string/province_ontario</item>
+        <item>@string/province_prince_edward_island</item>
+        <item>@string/province_quebec</item>
+        <item>@string/province_saskatchewan</item>
+        <item>@string/province_yukon</item>
+    </string-array>
+
+    <string name="spinner_default_business_type">Business Type</string>
+    <string name="business_fisher">Fisher</string>
+    <string name="business_distributor">Distributor</string>
+    <string name="business_processor">Processor</string>
+    <string name="business_fish_monger">Fish Monger</string>
+
+    <string-array name="business_types">
+        <item>@string/spinner_default_business_type</item>
+        <item>@string/business_fisher</item>
+        <item>@string/business_distributor</item>
+        <item>@string/business_processor</item>
+        <item>@string/business_fish_monger</item>
+    </string-array>
 </resources>

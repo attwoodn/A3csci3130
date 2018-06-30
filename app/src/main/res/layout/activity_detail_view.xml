@@ -5,52 +5,92 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.acme.a3csci3130.DetailViewActivity">
-    <EditText
-        android:layout_width="395dp"
-        android:layout_height="wrap_content"
-        android:id="@+id/name"
-        android:hint = "Name"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintLeft_toRightOf="parent"
+
+    <Spinner
+        android:id="@+id/provinceSpinner"
+        android:layout_width="0dp"
+        android:layout_height="44dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginStart="8dp" />
+        android:dropDownWidth="match_parent"
+        android:entries="@array/provinces"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/businessTypeSpinner" />
+
+    <Spinner
+        android:id="@+id/businessTypeSpinner"
+        android:layout_width="0dp"
+        android:layout_height="44dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:dropDownWidth="match_parent"
+        android:entries="@array/business_types"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/businessNumberTextField" />
 
     <EditText
-        android:id="@+id/address"
-        android:layout_width="395dp"
+        android:id="@+id/businessNumberTextField"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:hint="e-mail"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
-        app:layout_constraintTop_toBottomOf="@+id/name"
-        android:layout_marginLeft="8dp"
-        app:layout_constraintLeft_toLeftOf="parent"
-        android:layout_marginStart="8dp" />
+        android:hint="@string/hint_business_number"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/businessNameTextField" />
+
+    <EditText
+        android:id="@+id/businessNameTextField"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:hint="@string/hint_name"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/addressTextField"
+        android:layout_width="0dp"
+        android:layout_height="46dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:hint="Address"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/provinceSpinner" />
 
     <Button
         android:id="@+id/updateButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
+        android:layout_marginLeft="32dp"
+        android:layout_marginTop="24dp"
+        android:onClick="updateContact"
         android:text="Update Data"
-        app:layout_constraintTop_toBottomOf="@+id/address"
-        android:layout_marginLeft="8dp"
         app:layout_constraintLeft_toLeftOf="parent"
-        android:layout_marginStart="8dp"
-        android:onClick="updateContact"/>
+        app:layout_constraintTop_toBottomOf="@+id/addressTextField" />
 
     <Button
         android:id="@+id/deleteButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginRight="32dp"
+        android:layout_marginTop="24dp"
+        android:onClick="eraseContact"
         android:text="Erase Contact"
-        android:layout_marginTop="8dp"
-        app:layout_constraintTop_toBottomOf="@+id/address"
-        android:layout_marginRight="8dp"
         app:layout_constraintRight_toRightOf="parent"
-        android:layout_marginEnd="8dp"
-        android:onClick="eraseContact"/>
-
+        app:layout_constraintTop_toBottomOf="@+id/addressTextField" />
 
 
 </android.support.constraint.ConstraintLayout>
