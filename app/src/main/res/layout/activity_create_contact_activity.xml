@@ -73,7 +73,7 @@
         app:layout_constraintTop_toBottomOf="@+id/provinceSpinner" />
 
     <Button
-        android:id="@+id/submitButton"
+        android:id="@+id/createContactButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="8dp"

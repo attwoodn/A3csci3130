@@ -16,7 +16,6 @@ import com.google.firebase.database.FirebaseDatabase;
  */
 public class MainActivity extends Activity {
 
-
     private ListView contactListView;
     private FirebaseListAdapter<Contact> firebaseAdapter;
 
@@ -36,21 +35,22 @@ public class MainActivity extends Activity {
         contactListView = (ListView) findViewById(R.id.listView);
 
         //Set up the List View
-       firebaseAdapter = new FirebaseListAdapter<Contact>(this, Contact.class,
-                android.R.layout.simple_list_item_1, appData.firebaseReference) {
+        firebaseAdapter = new FirebaseListAdapter<Contact>(this, Contact.class,
+                 android.R.layout.simple_list_item_1, appData.firebaseReference) {
             @Override
             protected void populateView(View v, Contact model, int position) {
                 TextView contactName = (TextView)v.findViewById(android.R.id.text1);
                 contactName.setText(model.name);
             }
         };
+
         contactListView.setAdapter(firebaseAdapter);
         contactListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             // onItemClick method is called every time a user clicks an item on the list
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-            Contact businessContact = firebaseAdapter.getItem(position);
-            showDetailView(businessContact);
+                Contact businessContact = firebaseAdapter.getItem(position);
+                showDetailView(businessContact);
             }
         });
     }
