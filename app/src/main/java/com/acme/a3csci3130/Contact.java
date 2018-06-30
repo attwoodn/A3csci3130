@@ -7,8 +7,8 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * Class that defines how the data will be stored in the
- * Firebase database. This is converted to a JSON format
+ * Class that defines how the data will be stored in the Firebase database.
+ * This is converted to a JSON format.
  */
 
 public class Contact implements Serializable {
@@ -23,10 +23,6 @@ public class Contact implements Serializable {
 
     public Contact() {
         // Default constructor required for calls to DataSnapshot.getValue
-    }
-
-    public Contact(String databaseId, String businessId, String name, String businessType){
-        this(databaseId, businessId, name, businessType, "", "");
     }
 
     public Contact(String databaseId, String businessId, String name, String businessType, String address, String province){

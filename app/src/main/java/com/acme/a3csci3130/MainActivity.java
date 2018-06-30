@@ -11,6 +11,9 @@ import android.widget.TextView;
 import com.firebase.ui.database.FirebaseListAdapter;
 import com.google.firebase.database.FirebaseDatabase;
 
+/**
+ * Activity that displays a list of the contacts in the database.
+ */
 public class MainActivity extends Activity {
 
 

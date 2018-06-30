@@ -13,6 +13,9 @@ import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 
+/**
+ * Activity for viewing, updating, and deleting business contact information
+ */
 public class DetailViewActivity extends Activity {
 
     private EditText businessNameTextField, addressTextField, businessNumberTextField;
@@ -66,28 +69,14 @@ public class DetailViewActivity extends Activity {
         Contact contact = new Contact(databaseId, businessNumber, businessName, selectedBusinessType, address, selectedProvince);
 
         Task<Void> dbtask = appState.firebaseReference.child(databaseId).setValue(contact);
-
-        dbtask.addOnSuccessListener(new OnSuccessListener<Void>() {
-            @Override
-            public void onSuccess(Void aVoid) {
-                finish();
-            }
-        });
-
-        dbtask.addOnFailureListener(new OnFailureListener() {
-            @Override
-            public void onFailure(@NonNull Exception e) {
-                showError();
-            }
-        });
-    }
-
-    private void showError() {
-        Toast errorToast = Toast.makeText(this, getString(R.string.database_contact_submission_error), Toast.LENGTH_LONG);
-        errorToast.show();
+        new DatabaseTaskConfigurator().configureDatabaseTask(dbtask, getString(R.string.database_contact_submission_error), this);
     }
 
     public void eraseContact(View v) {
-        //TODO: Erase contact functionality
+        String databaseId = receivedBusinessInfo.databaseId;
+
+        Task<Void> dbtask = appState.firebaseReference.child(databaseId).removeValue();
+
+        new DatabaseTaskConfigurator().configureDatabaseTask(dbtask, getString(R.string.database_contact_submission_error), this);
     }
 }
